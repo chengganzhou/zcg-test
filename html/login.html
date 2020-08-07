@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        *{
+            margin:0px;
+            padding:0px;
+        }
+        body,html{
+            width:100%;
+            height:100%;
+            background:#ccc;
+        }
+        a{
+            text-decoration: none;
+            position:absolute;
+            top:20px;
+            right:20px;
+            color:red;
+            cursor: pointer;
+        }
+        .login{
+            width:500px;
+            height:250px;
+            border:1px solid black;
+            background:#fff;
+            position:absolute;
+            left:0;
+            top:0;
+            right:0;
+            bottom:0;
+            margin:auto;
+            display:none;
+            z-index:2;
+        }
+        .login .infor input{
+            width:250px;
+            height:20px;
+            margin:10px 0;
+        }
+        span{
+            position:absolute;
+            top:5px;
+            right:10px;
+            color:red;
+            cursor:pointer;
+            font-size:30px;
+        }
+        .sub{
+            margin:10px 0;
+        }
+        .sel{
+            margin-left:8px;
+        }
+        .mask{
+            width:100%;
+            height:100%;
+            background:lightblue;
+            position: absolute;
+            opacity:0.4;
+            display:none;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="wrap">
+    <a>登录</a>
+    <div class="login">
+    <form action="show.html">
+        <p class="infor">账号：<input type="text" name="user" class="user"></p>
+        <p class="infor">密码：<input type="pass"  name="pass"  class="pass"></p>
+        <p>记住账号<input type="checkbox" class="sel"></p>
+        <input type="submit" class="sub">
+        <span>x</span>
+    </form>
+    </div>
+    <div class="mask"> </div> 
+    </div>
+    </div>
+    <script src="../js/utils.js"></script>
+    <script>
+        var close=document.querySelector('span');
+        var enroll=document.querySelector('a');
+        var user=document.querySelector('.user');
+        var pass=document.querySelector('.pass');
+        var form=document.querySelector('form');
+        var user=document.querySelector('.user');
+        var sel=document.querySelector('.sel');
+        var mask=document.querySelector('.mask');
+        var login=document.querySelector('.login');
+        enroll.onclick=function(){
+            mask.style.display="block";
+            login.style.display="block";
+            if(getCookie('user')){
+               user.value=getCookie('user');
+               pass.value=getCookie('pass');
+               sel.checked=true;
+            }
+        }
+        close.onclick=function(){
+            mask.style.display="none";
+            login.style.display="none";
+        }
+        form.onsubmit=function(){
+            if(!user.value || !pass.value){
+                return false;
+            }
+            if(sel.checked){
+                setCookie({
+                    key:"user",
+                    val:user.value,
+                    days:5
+                });
+                setCookie({
+                    key:"pass",
+                    val:pass.value,
+                    days:5
+                });
+            }
+            else{
+                removeCookie('user');
+                removeCookie('pass');
+            }
+        }
+
+    </script>
+</body>
+</html>

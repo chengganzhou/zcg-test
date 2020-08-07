@@ -1,0 +1,130 @@
+*{
+    margin:0px;
+    padding:0px;
+}
+li,ul{
+    list-style:none;
+}
+html,body{
+    height:100%;
+}
+.wrap{
+    width:100%;
+    height:100%;
+  
+}
+.header{
+    width:800px;
+    background:#ccc;
+    height:100px;
+    margin:0 auto 20px;
+}
+.header h2{
+    line-height:100px;
+    text-align:center;
+    font-size:30px;
+}
+.nav{
+    width:800px;
+    background:#ccc;
+    height:50px;
+    margin:0 auto 20px;
+}
+.nav span{
+    line-height:50px;
+}
+.sp1,.sp3{
+    margin-left:100px;
+}
+.sp2{
+    margin-left:320px;
+}
+.sp5{
+    margin-left:30px;
+}
+.sp4{
+    margin-left:30px;
+}
+.list{
+    width:800px;
+    margin:0 auto 20px;
+}
+.list li{
+    overflow:hidden;
+    margin-bottom:20px;
+}
+.list li input{
+    float:left;
+    margin-top:10px;
+}
+.list li img{
+    width:110px;
+    float:left;
+    margin-left:5px;
+}
+.list li h3{
+    font-weight:normal;
+    font-size:14px;
+    float:left;
+    margin-top:10px;
+    width:150px;
+}
+.list li p{
+    float:left;
+    margin:10px 0 0 173px ;
+    font-size:14px;
+    color:red;
+}
+.list li i{
+    float:left;
+    font-size:14px;
+    font-style:normal;
+    margin:13px 0 0 92px;
+    border:1px solid black;
+    width:10px;
+    height:10px;
+    text-align:center;
+    line-height:10px;
+    cursor: pointer;
+}
+.list li em{
+    float:left;
+    font-size:14px;
+    font-style:normal;
+    margin-top:13px;
+    width:10px;
+    height:10px;
+    border:1px solid black;
+    text-align:center;
+    line-height:10px;
+    cursor: pointer;
+}
+.list li span{
+    float:left;
+    font-size:14px;
+    margin:10px 0 0 5px;
+    width:20px;
+    text-align:center;
+}
+.list li b{
+    float:left;
+    font-size:14px;
+    margin:10px 0 0 23px;
+    width:25px;
+}
+.list li div{
+    float:left;
+    margin-left:50px;
+    font-size:14px;
+    margin-top:10px;
+    color:red;
+    cursor:pointer;
+}
+.foot{
+    margin: 0 auto;
+    width:800px;
+    font-size:14px
+}
+.foot .all{
+    margin-left:10px;
+}

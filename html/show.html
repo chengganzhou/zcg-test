@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h2>欢迎来到此页面</h2>
+    <h3>您上一次登录时间为<span></span></h3>
+    <script src='../js/utils.js'></script>
+    <script>
+        var time=$1('span');
+        var d=new Date();
+        var str=d.getFullYear()+'年'+(d.getMonth()+1)+'月'+d.getDate()+'日'+
+        d.getHours()+'时'+d.getMinutes()+'分';
+        if(getCookie("time")){
+            time.innerText=str;
+            }else{
+                time.innerText="你最近几天还没有登录";
+            }
+        console.log(str)
+        setCookie({
+        key:'time',
+        val:  str,
+        days:5
+    })
+
+
+    </script>
+</body>
+</html>

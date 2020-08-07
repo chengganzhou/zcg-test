@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>Document</title>
+<link rel="stylesheet" href="../css/olive.css">
+</head>
+<body>
+    <h2>我的主页</h2>
+    <select name="" id="">
+        <option value=-1>请选择</option>
+        <option value='olive'>橙色</option>
+        <option value='pink'>粉色</option>
+        <option value='blue'>蓝色</option>
+    </select>
+    <script src="../js/utils.js"></script>
+    <script>
+        var select=$1('select');
+        var link=$1('link');
+        if(getCookie('style')){
+           change(getCookie('style'));
+        }
+        select.onchange=function(){
+            change(this.value);
+        }
+        function change(val){
+            switch(val){
+                case 'olive':
+                link.href = "../css/olive.css";
+                setCookie({
+                    key:'style',
+                    val:val,
+                    days:5
+                });
+                break;
+                case 'pink':
+                link.href = "../css/pink.css";
+                setCookie({
+                    key:'style',
+                    val:val,
+                    days:5
+                });
+                break;
+                case 'blue':
+                link.href = "../css/blue.css";
+                setCookie({
+                    key:'style',
+                    val:val,
+                    days:5
+                });
+                break;
+                
+            }
+           
+        }
+        
+    </script>
+</body>
+</html>
