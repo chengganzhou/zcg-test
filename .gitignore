@@ -1,4 +1,4 @@
 # Ignore docs files
-css
-html
+node_modules
+
 
